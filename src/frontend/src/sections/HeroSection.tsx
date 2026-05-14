@@ -205,10 +205,10 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-base sm:text-lg max-w-md leading-relaxed"
-            style={{ color: "rgba(232,232,240,0.65)" }}
+            style={{ color: "rgba(148,163,184,0.9)" }}
           >
             AI &amp; Data Science Student at{" "}
-            <span style={{ color: "#a78bfa" }}>
+            <span style={{ color: "#93c5fd" }}>
               Sri Krishna College of Engineering and Technology
             </span>
             , crafting intelligent systems and immersive digital experiences.
@@ -227,9 +227,9 @@ export function HeroSection() {
               onClick={scrollToWork}
               className="px-6 py-3 rounded-lg font-semibold text-sm flex items-center gap-2 transition-smooth hover:scale-105"
               style={{
-                background: "linear-gradient(135deg, #7c3aed, #00d4ff)",
+                backgroundColor: "#2563eb",
                 color: "#fff",
-                boxShadow: "0 0 20px rgba(124,58,237,0.35)",
+                boxShadow: "0 2px 12px rgba(37,99,235,0.35)",
               }}
             >
               View My Work <ExternalLink size={16} />
@@ -256,7 +256,7 @@ export function HeroSection() {
               style={{
                 backgroundColor: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.1)",
-                color: "rgba(232,232,240,0.8)",
+                color: "rgba(241,245,249,0.8)",
               }}
             >
               <Download size={16} /> Resume
@@ -270,7 +270,7 @@ export function HeroSection() {
             transition={{ delay: 0.75, duration: 0.5 }}
             className="flex items-center gap-4 pt-2"
           >
-            {SOCIALS.map(({ icon: Icon, href, label, ocid, glowColor }) => (
+            {SOCIALS.map(({ icon: Icon, href, label, ocid }) => (
               <motion.a
                 key={label}
                 href={href}
@@ -278,16 +278,12 @@ export function HeroSection() {
                 rel="noopener noreferrer"
                 aria-label={label}
                 data-ocid={ocid}
-                whileHover={
-                  shouldReduceMotion
-                    ? {}
-                    : { scale: 1.2, boxShadow: `0 0 18px ${glowColor}` }
-                }
+                whileHover={shouldReduceMotion ? {} : { scale: 1.1 }}
                 className="w-11 h-11 rounded-full flex items-center justify-center transition-smooth"
                 style={{
-                  backgroundColor: "rgba(255,255,255,0.06)",
+                  backgroundColor: "rgba(255,255,255,0.05)",
                   border: "1px solid rgba(255,255,255,0.1)",
-                  color: "rgba(232,232,240,0.7)",
+                  color: "rgba(241,245,249,0.65)",
                 }}
               >
                 <Icon size={20} />
@@ -308,30 +304,18 @@ export function HeroSection() {
           className="flex items-center justify-center"
         >
           <div className="relative">
-            {/* Spinning gradient ring */}
-            <motion.div
+            {/* Subtle ring */}
+            <div
               className="absolute inset-0 rounded-full"
               style={{
-                background:
-                  "conic-gradient(from 0deg, #7c3aed, #00d4ff, #06ffd4, #7c3aed)",
-                padding: "3px",
-                borderRadius: "50%",
-                filter: "blur(1px)",
-              }}
-              animate={shouldReduceMotion ? {} : { rotate: 360 }}
-              transition={{
-                duration: 8,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "linear",
+                background: "transparent",
               }}
             />
-            {/* Outer glow */}
+            {/* subtle ambient glow */}
             <div
               className="absolute inset-[-8px] rounded-full"
               style={{
-                background:
-                  "radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%)",
-                filter: "blur(20px)",
+                background: "transparent",
               }}
             />
             {/* Profile image container */}
@@ -340,9 +324,8 @@ export function HeroSection() {
               style={{
                 width: 280,
                 height: 280,
-                border: "3px solid transparent",
-                background:
-                  "linear-gradient(#0a0a0f, #0a0a0f) padding-box, linear-gradient(135deg, #7c3aed, #00d4ff, #06ffd4) border-box",
+                border: "2px solid rgba(255,255,255,0.1)",
+                backgroundColor: "#1e293b",
               }}
               animate={shouldReduceMotion ? {} : { y: [0, -12, 0] }}
               transition={{
@@ -359,28 +342,26 @@ export function HeroSection() {
               />
             </motion.div>
 
-            {/* HUD corner accent */}
+            {/* Subtle corner accents */}
             <div
-              className="absolute -top-4 -right-4 w-8 h-8"
+              className="absolute -top-4 -right-4 w-6 h-6"
               style={{
-                borderTop: "2px solid #00d4ff",
-                borderRight: "2px solid #00d4ff",
-                opacity: 0.8,
+                borderTop: "1px solid rgba(255,255,255,0.15)",
+                borderRight: "1px solid rgba(255,255,255,0.15)",
               }}
             />
             <div
-              className="absolute -bottom-4 -left-4 w-8 h-8"
+              className="absolute -bottom-4 -left-4 w-6 h-6"
               style={{
-                borderBottom: "2px solid #7c3aed",
-                borderLeft: "2px solid #7c3aed",
-                opacity: 0.8,
+                borderBottom: "1px solid rgba(255,255,255,0.15)",
+                borderLeft: "1px solid rgba(255,255,255,0.15)",
               }}
             />
 
             {/* Floating badge */}
             <motion.div
               className="absolute -bottom-3 left-1/2 -translate-x-1/2 glass-card px-4 py-1.5 rounded-full text-xs font-mono"
-              style={{ color: "#06ffd4", whiteSpace: "nowrap" }}
+              style={{ color: "#93c5fd", whiteSpace: "nowrap" }}
               animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
               transition={{
                 duration: 2.5,
@@ -402,7 +383,7 @@ export function HeroSection() {
         aria-label="Scroll to About section"
         data-ocid="hero.scroll_indicator"
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
-        style={{ color: "rgba(232,232,240,0.4)" }}
+        style={{ color: "rgba(148,163,184,0.5)" }}
         animate={shouldReduceMotion ? {} : { y: [0, 10, 0] }}
         transition={{
           duration: 1.6,

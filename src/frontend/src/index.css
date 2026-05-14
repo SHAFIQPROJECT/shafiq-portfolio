@@ -121,52 +121,43 @@
 
   /* --- Cyberpunk neon variables --- */
   :root {
-    --neon-blue: #00d4ff;
-    --neon-purple: #7c3aed;
-    --neon-cyan: #06ffd4;
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #0d0d1a;
+    --accent-blue: #3b82f6;
+    --accent-blue-dark: #2563eb;
+    --accent-light: #60a5fa;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
   }
 
   /* Cyberpunk glassmorphism card */
   .glass-card {
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    background-color: rgba(15, 15, 30, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: rgba(15, 23, 42, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.1), 0 8px 32px rgba(0, 0, 0, 0.4);
   }
 
   /* Neon glow effects */
   .neon-glow {
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.5), 0 0 40px
-      rgba(124, 58, 237, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
   .neon-glow-blue {
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
   }
   .neon-glow-cyan {
-    box-shadow: 0 0 15px rgba(6, 255, 212, 0.5), 0 0 40px rgba(6, 255, 212, 0.2);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
   }
 
   /* Neon borders */
   .neon-border {
-    border: 1px solid rgba(0, 212, 255, 0.4);
-    box-shadow: inset 0 0 12px rgba(0, 212, 255, 0.08), 0 0 8px
-      rgba(0, 212, 255, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
   }
   .neon-border-purple {
-    border: 1px solid rgba(124, 58, 237, 0.4);
-    box-shadow: inset 0 0 12px rgba(124, 58, 237, 0.08), 0 0 8px
-      rgba(124, 58, 237, 0.2);
+    border: 1px solid rgba(99, 102, 241, 0.3);
   }
 
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #06ffd4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #f1f5f9;
   }
   .gradient-text-subtle {
     background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
@@ -177,34 +168,24 @@
 
   /* Soft glow shadow */
   .shadow-glow {
-    box-shadow: 0 0 30px rgba(124, 58, 237, 0.2), 0 10px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   }
 
   /* Neon button */
   .btn-neon {
-    background: linear-gradient(
-      135deg,
-      rgba(0, 212, 255, 0.15),
-      rgba(124, 58, 237, 0.15)
-    );
-    border: 1px solid rgba(0, 212, 255, 0.4);
-    color: #00d4ff;
+    background: #2563eb;
+    border: none;
+    color: white;
     transition: all 0.25s ease;
   }
   .btn-neon:hover {
-    background: linear-gradient(
-      135deg,
-      rgba(0, 212, 255, 0.25),
-      rgba(124, 58, 237, 0.25)
-    );
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.35);
-    transform: scale(1.03);
+    background: #1d4ed8;
+    transform: scale(1.02);
   }
 
   /* Skill bar */
   .skill-bar-fill {
-    background: linear-gradient(90deg, #7c3aed, #00d4ff);
-    box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
   }
 
   /* Section separator */
@@ -213,8 +194,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(0, 212, 255, 0.3),
-      rgba(124, 58, 237, 0.3),
+      rgba(255, 255, 255, 0.1),
       transparent
     );
   }
@@ -226,7 +206,7 @@
 
   /* Focus ring */
   *:focus-visible {
-    outline: 2px solid rgba(0, 212, 255, 0.7);
+    outline: 2px solid rgba(96, 165, 250, 0.7);
     outline-offset: 2px;
     border-radius: 4px;
   }

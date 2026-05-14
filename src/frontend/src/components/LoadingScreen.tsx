@@ -25,7 +25,7 @@ export function LoadingScreen() {
         <motion.div
           key="loader"
           className="fixed inset-0 z-[10000] flex flex-col items-center justify-center"
-          style={{ backgroundColor: "#0a0a0f" }}
+          style={{ backgroundColor: "#0f172a" }}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -37,23 +37,26 @@ export function LoadingScreen() {
             transition={{ duration: 0.6 }}
             className="mb-8 text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-display font-bold gradient-text mb-2">
+            <h1
+              className="text-4xl md:text-5xl font-display font-bold mb-2"
+              style={{ color: "#f1f5f9" }}
+            >
               A.Shafiq Ahamed
             </h1>
             <p
               className="font-mono text-sm tracking-[0.3em] uppercase"
-              style={{ color: "#00d4ff" }}
+              style={{ color: "#60a5fa" }}
             >
               AI &amp; Data Science Engineer
             </p>
           </motion.div>
 
-          {/* Animated ring */}
+          {/* Spinner */}
           <motion.div
-            className="w-16 h-16 rounded-full mb-8"
+            className="w-12 h-12 rounded-full mb-8"
             style={{
-              border: "2px solid rgba(0,212,255,0.2)",
-              borderTopColor: "#00d4ff",
+              border: "2px solid rgba(255,255,255,0.08)",
+              borderTopColor: "#3b82f6",
             }}
             animate={{ rotate: 360 }}
             transition={{
@@ -70,9 +73,7 @@ export function LoadingScreen() {
           >
             <motion.div
               className="h-full rounded-full"
-              style={{
-                background: "linear-gradient(90deg,#00d4ff,#7c3aed,#06ffd4)",
-              }}
+              style={{ backgroundColor: "#3b82f6" }}
               initial={{ width: "0%" }}
               animate={{ width: `${Math.min(progress, 100)}%` }}
               transition={{ ease: "linear" }}

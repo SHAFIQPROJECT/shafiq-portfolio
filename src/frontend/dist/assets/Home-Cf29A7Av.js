@@ -1,5 +1,5 @@
-import { c as createLucideIcon, h as hasReducedMotionListener, i as initPrefersReducedMotion, r as reactExports, p as prefersReducedMotion, a as resolveElements, j as jsxRuntimeExports, m as motion, u as useCertifications, B as Button, b as cn, d as useSubmitContactForm, S as Send, G as GenIcon, e as SiGithub, f as useGetGithubStats, g as useGetGithubRepos, k as useProjects, A as AnimatePresence, X, l as useResumeFileId, n as useSkills, o as SiLinux, q as SiDocker, s as SiGit, t as SiFirebase, v as SiMysql, w as SiMongodb, x as SiPython, y as SiScikitlearn, z as SiPytorch, C as SiTensorflow, D as SiFastapi, E as SiNodedotjs, F as SiHtml5, H as SiTailwindcss, I as SiTypescript, J as SiReact, K as useTrackVisit } from "./index-UR4y1w7U.js";
-import { B as Badge, C as Calendar, S as Shield, E as ExternalLink, M as Mail, G as Github, a as CircleCheck, L as Label, I as Input, b as LoaderCircle, c as ChevronUp, U as Users, d as Eye, F as FileText } from "./label--HKgiWv8.js";
+import { c as createLucideIcon, h as hasReducedMotionListener, i as initPrefersReducedMotion, r as reactExports, p as prefersReducedMotion, a as resolveElements, j as jsxRuntimeExports, m as motion, u as useCertifications, B as Button, b as cn, d as useSubmitContactForm, S as Send, G as GenIcon, e as SiGithub, f as useGetGithubStats, g as useGetGithubRepos, k as useProjects, A as AnimatePresence, X, l as useResumeFileId, n as useSkills, o as SiLinux, q as SiDocker, s as SiGit, t as SiFirebase, v as SiMysql, w as SiMongodb, x as SiPython, y as SiScikitlearn, z as SiPytorch, C as SiTensorflow, D as SiFastapi, E as SiNodedotjs, F as SiHtml5, H as SiTailwindcss, I as SiTypescript, J as SiReact, K as useTrackVisit } from "./index-AFwfAPkI.js";
+import { B as Badge, C as Calendar, S as Shield, E as ExternalLink, M as Mail, G as Github, a as CircleCheck, L as Label, I as Input, b as LoaderCircle, c as ChevronUp, U as Users, d as Eye, F as FileText } from "./label-BOSYm4hA.js";
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -2189,11 +2189,11 @@ function HeroSection() {
                     animate: { opacity: 1, y: 0 },
                     transition: { delay: 0.5, duration: 0.6 },
                     className: "text-base sm:text-lg max-w-md leading-relaxed",
-                    style: { color: "rgba(232,232,240,0.65)" },
+                    style: { color: "rgba(148,163,184,0.9)" },
                     children: [
                       "AI & Data Science Student at",
                       " ",
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#a78bfa" }, children: "Sri Krishna College of Engineering and Technology" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#93c5fd" }, children: "Sri Krishna College of Engineering and Technology" }),
                       ", crafting intelligent systems and immersive digital experiences."
                     ]
                   }
@@ -2214,9 +2214,9 @@ function HeroSection() {
                           onClick: scrollToWork,
                           className: "px-6 py-3 rounded-lg font-semibold text-sm flex items-center gap-2 transition-smooth hover:scale-105",
                           style: {
-                            background: "linear-gradient(135deg, #7c3aed, #00d4ff)",
+                            backgroundColor: "#2563eb",
                             color: "#fff",
-                            boxShadow: "0 0 20px rgba(124,58,237,0.35)"
+                            boxShadow: "0 2px 12px rgba(37,99,235,0.35)"
                           },
                           children: [
                             "View My Work ",
@@ -2247,7 +2247,7 @@ function HeroSection() {
                           style: {
                             backgroundColor: "rgba(255,255,255,0.05)",
                             border: "1px solid rgba(255,255,255,0.1)",
-                            color: "rgba(232,232,240,0.8)"
+                            color: "rgba(241,245,249,0.8)"
                           },
                           children: [
                             /* @__PURE__ */ jsxRuntimeExports.jsx(Download, { size: 16 }),
@@ -2265,7 +2265,7 @@ function HeroSection() {
                     animate: { opacity: 1, y: 0 },
                     transition: { delay: 0.75, duration: 0.5 },
                     className: "flex items-center gap-4 pt-2",
-                    children: SOCIALS.map(({ icon: Icon, href, label, ocid, glowColor }) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    children: SOCIALS.map(({ icon: Icon, href, label, ocid }) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                       motion.a,
                       {
                         href,
@@ -2273,12 +2273,12 @@ function HeroSection() {
                         rel: "noopener noreferrer",
                         "aria-label": label,
                         "data-ocid": ocid,
-                        whileHover: shouldReduceMotion ? {} : { scale: 1.2, boxShadow: `0 0 18px ${glowColor}` },
+                        whileHover: shouldReduceMotion ? {} : { scale: 1.1 },
                         className: "w-11 h-11 rounded-full flex items-center justify-center transition-smooth",
                         style: {
-                          backgroundColor: "rgba(255,255,255,0.06)",
+                          backgroundColor: "rgba(255,255,255,0.05)",
                           border: "1px solid rgba(255,255,255,0.1)",
-                          color: "rgba(232,232,240,0.7)"
+                          color: "rgba(241,245,249,0.65)"
                         },
                         children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { size: 20 })
                       },
@@ -2302,20 +2302,11 @@ function HeroSection() {
               className: "flex items-center justify-center",
               children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  motion.div,
+                  "div",
                   {
                     className: "absolute inset-0 rounded-full",
                     style: {
-                      background: "conic-gradient(from 0deg, #7c3aed, #00d4ff, #06ffd4, #7c3aed)",
-                      padding: "3px",
-                      borderRadius: "50%",
-                      filter: "blur(1px)"
-                    },
-                    animate: shouldReduceMotion ? {} : { rotate: 360 },
-                    transition: {
-                      duration: 8,
-                      repeat: Number.POSITIVE_INFINITY,
-                      ease: "linear"
+                      background: "transparent"
                     }
                   }
                 ),
@@ -2324,8 +2315,7 @@ function HeroSection() {
                   {
                     className: "absolute inset-[-8px] rounded-full",
                     style: {
-                      background: "radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%)",
-                      filter: "blur(20px)"
+                      background: "transparent"
                     }
                   }
                 ),
@@ -2336,8 +2326,8 @@ function HeroSection() {
                     style: {
                       width: 280,
                       height: 280,
-                      border: "3px solid transparent",
-                      background: "linear-gradient(#0a0a0f, #0a0a0f) padding-box, linear-gradient(135deg, #7c3aed, #00d4ff, #06ffd4) border-box"
+                      border: "2px solid rgba(255,255,255,0.1)",
+                      backgroundColor: "#1e293b"
                     },
                     animate: shouldReduceMotion ? {} : { y: [0, -12, 0] },
                     transition: {
@@ -2359,22 +2349,20 @@ function HeroSection() {
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
                   {
-                    className: "absolute -top-4 -right-4 w-8 h-8",
+                    className: "absolute -top-4 -right-4 w-6 h-6",
                     style: {
-                      borderTop: "2px solid #00d4ff",
-                      borderRight: "2px solid #00d4ff",
-                      opacity: 0.8
+                      borderTop: "1px solid rgba(255,255,255,0.15)",
+                      borderRight: "1px solid rgba(255,255,255,0.15)"
                     }
                   }
                 ),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
                   {
-                    className: "absolute -bottom-4 -left-4 w-8 h-8",
+                    className: "absolute -bottom-4 -left-4 w-6 h-6",
                     style: {
-                      borderBottom: "2px solid #7c3aed",
-                      borderLeft: "2px solid #7c3aed",
-                      opacity: 0.8
+                      borderBottom: "1px solid rgba(255,255,255,0.15)",
+                      borderLeft: "1px solid rgba(255,255,255,0.15)"
                     }
                   }
                 ),
@@ -2382,7 +2370,7 @@ function HeroSection() {
                   motion.div,
                   {
                     className: "absolute -bottom-3 left-1/2 -translate-x-1/2 glass-card px-4 py-1.5 rounded-full text-xs font-mono",
-                    style: { color: "#06ffd4", whiteSpace: "nowrap" },
+                    style: { color: "#93c5fd", whiteSpace: "nowrap" },
                     animate: shouldReduceMotion ? {} : { y: [0, -4, 0] },
                     transition: {
                       duration: 2.5,
@@ -2405,7 +2393,7 @@ function HeroSection() {
             "aria-label": "Scroll to About section",
             "data-ocid": "hero.scroll_indicator",
             className: "absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer",
-            style: { color: "rgba(232,232,240,0.4)" },
+            style: { color: "rgba(148,163,184,0.5)" },
             animate: shouldReduceMotion ? {} : { y: [0, 10, 0] },
             transition: {
               duration: 1.6,

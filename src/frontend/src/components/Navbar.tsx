@@ -22,14 +22,6 @@ function scrollToSection(id: string) {
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   const updateActive = useCallback(() => {
     const ids = NAV_LINKS.map((l) => l.id);
     for (let i = ids.length - 1; i >= 0; i--) {
@@ -52,14 +44,8 @@ export function Navbar() {
       data-ocid="navbar"
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        backgroundColor: scrolled
-          ? "rgba(10,10,15,0.85)"
-          : "rgba(10,10,15,0.4)",
-        borderBottom: scrolled
-          ? "1px solid rgba(255,255,255,0.08)"
-          : "1px solid transparent",
+        backgroundColor: "#0f172a",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +55,7 @@ export function Navbar() {
             type="button"
             data-ocid="navbar.logo"
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-display font-bold gradient-text hover:opacity-80 transition-opacity"
+            className="text-xl font-display font-bold text-white hover:opacity-80 transition-opacity"
           >
             A.Shafiq
           </button>
@@ -86,7 +72,7 @@ export function Navbar() {
                 style={{
                   color:
                     activeSection === link.id
-                      ? "#00d4ff"
+                      ? "#60a5fa"
                       : "rgba(255,255,255,0.65)",
                 }}
               >
@@ -94,7 +80,7 @@ export function Navbar() {
                   <motion.span
                     layoutId="nav-active"
                     className="absolute inset-0 rounded-md"
-                    style={{ backgroundColor: "rgba(0,212,255,0.08)" }}
+                    style={{ backgroundColor: "rgba(59,130,246,0.1)" }}
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
@@ -151,8 +137,7 @@ export function Navbar() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
             style={{
               borderTop: "1px solid rgba(255,255,255,0.07)",
-              backgroundColor: "rgba(10,10,15,0.97)",
-              backdropFilter: "blur(16px)",
+              backgroundColor: "#0f172a",
             }}
           >
             <div className="px-4 py-3 flex flex-col gap-1">
@@ -172,11 +157,11 @@ export function Navbar() {
                   style={{
                     color:
                       activeSection === link.id
-                        ? "#00d4ff"
+                        ? "#60a5fa"
                         : "rgba(255,255,255,0.7)",
                     backgroundColor:
                       activeSection === link.id
-                        ? "rgba(0,212,255,0.08)"
+                        ? "rgba(59,130,246,0.1)"
                         : "transparent",
                   }}
                 >
