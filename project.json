@@ -1,0 +1,23 @@
+{
+  "overview": "A premium futuristic AI engineer portfolio for A.Shafiq Ahamed — dark cyberpunk UI with glassmorphism, neon gradients, Three.js particle background, and Framer Motion animations. Features a full backend CMS with admin dashboard, projects/skills/certs management, contact form, GitHub API integration, AI chatbot, resume upload, and visitor analytics.",
+  "features": [
+    "Dark cyberpunk UI with glassmorphism, neon blue/purple/cyan gradients, and animated particle background",
+    "9 portfolio sections: Hero, About, Skills, Projects, Certifications, Experience, Resume, Contact, Footer",
+    "Admin dashboard for managing all portfolio content (projects, skills, certifications, messages)",
+    "Contact form with backend storage, GitHub API stats integration, and AI chatbot assistant",
+    "Resume upload and download via file storage, with visitor analytics tracking",
+    "Fully responsive mobile-first layout with custom cursor glow and Framer Motion animations"
+  ],
+  "category": "portfolio",
+  "tags": [
+    "portfolio",
+    "cyberpunk",
+    "ai",
+    "dark-theme",
+    "glassmorphism",
+    "framer-motion",
+    "admin-dashboard",
+    "animations"
+  ],
+  "last_updated": "2026-05-14T14:06:10.039Z"
+}

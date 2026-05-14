@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: General Sans;
+    --font-body: General Sans;
+    --font-mono: Geist Mono;
+    --radius: 0.625rem;
+
+    --background: 0.06 0.04 273;
+    --foreground: 0.95 0.02 273;
+    --card: 0.12 0.05 273;
+    --card-foreground: 0.93 0.03 273;
+    --popover: 0.15 0.06 273;
+    --popover-foreground: 0.93 0.03 273;
+
+    --primary: 0.55 0.24 264;
+    --primary-foreground: 0.95 0.02 273;
+
+    --secondary: 0.42 0.18 271;
+    --secondary-foreground: 0.93 0.03 273;
+    --muted: 0.18 0.08 273;
+    --muted-foreground: 0.58 0.04 273;
+
+    --accent: 0.65 0.28 264;
+    --accent-foreground: 0.06 0.04 273;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.22 0.08 273;
+    --input: 0.22 0.08 273;
+    --ring: 0.65 0.28 264;
+
+    --chart-1: 0.65 0.26 264;
+    --chart-2: 0.55 0.22 289;
+    --chart-3: 0.48 0.2 298;
+    --chart-4: 0.72 0.25 276;
+    --chart-5: 0.58 0.24 262;
+
+    --sidebar: 0.12 0.05 273;
+    --sidebar-foreground: 0.93 0.03 273;
+    --sidebar-primary: 0.65 0.28 264;
+    --sidebar-primary-foreground: 0.06 0.04 273;
+    --sidebar-accent: 0.42 0.18 271;
+    --sidebar-accent-foreground: 0.93 0.03 273;
+    --sidebar-border: 0.22 0.08 273;
+    --sidebar-ring: 0.65 0.28 264;
+  }
+
+  .dark {
+    --background: 0.06 0.04 273;
+    --foreground: 0.95 0.02 273;
+    --card: 0.12 0.05 273;
+    --card-foreground: 0.93 0.03 273;
+    --popover: 0.15 0.06 273;
+    --popover-foreground: 0.93 0.03 273;
+
+    --primary: 0.55 0.24 264;
+    --primary-foreground: 0.95 0.02 273;
+
+    --secondary: 0.42 0.18 271;
+    --secondary-foreground: 0.93 0.03 273;
+    --muted: 0.18 0.08 273;
+    --muted-foreground: 0.58 0.04 273;
+
+    --accent: 0.65 0.28 264;
+    --accent-foreground: 0.06 0.04 273;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.95 0.02 273;
+
+    --border: 0.22 0.08 273;
+    --input: 0.22 0.08 273;
+    --ring: 0.65 0.28 264;
+
+    --chart-1: 0.65 0.26 264;
+    --chart-2: 0.55 0.22 289;
+    --chart-3: 0.48 0.2 298;
+    --chart-4: 0.72 0.25 276;
+    --chart-5: 0.58 0.24 262;
+
+    --sidebar: 0.12 0.05 273;
+    --sidebar-foreground: 0.93 0.03 273;
+    --sidebar-primary: 0.65 0.28 264;
+    --sidebar-primary-foreground: 0.06 0.04 273;
+    --sidebar-accent: 0.42 0.18 271;
+    --sidebar-accent-foreground: 0.93 0.03 273;
+    --sidebar-border: 0.22 0.08 273;
+    --sidebar-ring: 0.65 0.28 264;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    cursor: none;
+  }
+  @media (hover: none) {
+    body {
+      cursor: auto;
+    }
+  }
+}
+
+@layer utilities {
+  @font-face {
+    font-family: "General Sans";
+    src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Geist Mono";
+    src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  /* --- Cyberpunk neon variables --- */
+  :root {
+    --neon-blue: #00d4ff;
+    --neon-purple: #7c3aed;
+    --neon-cyan: #06ffd4;
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #0d0d1a;
+  }
+
+  /* Cyberpunk glassmorphism card */
+  .glass-card {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(15, 15, 30, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.1), 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Neon glow effects */
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.5), 0 0 40px
+      rgba(124, 58, 237, 0.25);
+  }
+  .neon-glow-blue {
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.2);
+  }
+  .neon-glow-cyan {
+    box-shadow: 0 0 15px rgba(6, 255, 212, 0.5), 0 0 40px rgba(6, 255, 212, 0.2);
+  }
+
+  /* Neon borders */
+  .neon-border {
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    box-shadow: inset 0 0 12px rgba(0, 212, 255, 0.08), 0 0 8px
+      rgba(0, 212, 255, 0.2);
+  }
+  .neon-border-purple {
+    border: 1px solid rgba(124, 58, 237, 0.4);
+    box-shadow: inset 0 0 12px rgba(124, 58, 237, 0.08), 0 0 8px
+      rgba(124, 58, 237, 0.2);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #06ffd4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-subtle {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Soft glow shadow */
+  .shadow-glow {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.2), 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Neon button */
+  .btn-neon {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 212, 255, 0.15),
+      rgba(124, 58, 237, 0.15)
+    );
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    color: #00d4ff;
+    transition: all 0.25s ease;
+  }
+  .btn-neon:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 212, 255, 0.25),
+      rgba(124, 58, 237, 0.25)
+    );
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.35);
+    transform: scale(1.03);
+  }
+
+  /* Skill bar */
+  .skill-bar-fill {
+    background: linear-gradient(90deg, #7c3aed, #00d4ff);
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+  }
+
+  /* Section separator */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 212, 255, 0.3),
+      rgba(124, 58, 237, 0.3),
+      transparent
+    );
+  }
+
+  /* Transition utilities */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Focus ring */
+  *:focus-visible {
+    outline: 2px solid rgba(0, 212, 255, 0.7);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

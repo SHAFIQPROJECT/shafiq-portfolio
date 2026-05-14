@@ -1,0 +1,190 @@
+type http_request_result = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type http_header = 
+ record {
+   name: text;
+   value: text;
+ };
+type _ImmutableObjectStorageRefillResult = 
+ record {
+   success: opt bool;
+   topped_up_amount: opt nat;
+ };
+type _ImmutableObjectStorageRefillInformation = record {
+                                                  proposed_top_up_amount:
+                                                   opt nat;};
+type _ImmutableObjectStorageCreateCertificateResult = 
+ record {
+   blob_hash: text;
+   method: text;
+ };
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type TransformationOutput = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type TransformationInput = 
+ record {
+   context: blob;
+   response: http_request_result;
+ };
+type Timestamp = int;
+type Skill = 
+ record {
+   category: text;
+   description: text;
+   id: text;
+   level: nat;
+   name: text;
+ };
+type Project = 
+ record {
+   category: text;
+   demoUrl: text;
+   description: text;
+   featured: bool;
+   githubUrl: text;
+   id: text;
+   imageUrl: text;
+   order: nat;
+   techStack: vec text;
+   title: text;
+ };
+type Message = 
+ record {
+   email: text;
+   id: text;
+   message: text;
+   name: text;
+   read: bool;
+   subject: text;
+   timestamp: Timestamp;
+ };
+type Certification = 
+ record {
+   credentialUrl: text;
+   date: text;
+   description: text;
+   id: text;
+   imageUrl: text;
+   issuer: text;
+   title: text;
+ };
+type Analytics = 
+ record {
+   lastUpdated: Timestamp;
+   pageViews: nat;
+   totalVisits: nat;
+ };
+service : {
+  _immutableObjectStorageBlobsAreLive: (hashes: vec blob) -> (vec bool) query;
+  _immutableObjectStorageBlobsToDelete: () -> (vec blob) query;
+  _immutableObjectStorageConfirmBlobDeletion: (blobs: vec blob) -> ();
+  _immutableObjectStorageCreateCertificate: (blobHash: text) ->
+   (_ImmutableObjectStorageCreateCertificateResult);
+  _immutableObjectStorageRefillCashier: (refillInformation:
+   opt _ImmutableObjectStorageRefillInformation) ->
+   (_ImmutableObjectStorageRefillResult);
+  _immutableObjectStorageUpdateGatewayPrincipals: () -> ();
+  _initializeAccessControl: () -> ();
+  addCertification: (c: Certification) -> (variant {
+                                             err: text;
+                                             ok;
+                                           });
+  addProject: (p: Project) -> (variant {
+                                 err: text;
+                                 ok;
+                               });
+  addSkill: (s: Skill) -> (variant {
+                             err: text;
+                             ok;
+                           });
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  chatWithAI: (message: text, history:
+   vec record {
+         content: text;
+         role: text;
+       }) -> (variant {
+                err: text;
+                ok: text;
+              });
+  deleteCertification: (id: text) -> (variant {
+                                        err: text;
+                                        ok;
+                                      });
+  deleteMessage: (id: text) -> (variant {
+                                  err: text;
+                                  ok;
+                                });
+  deleteProject: (id: text) -> (variant {
+                                  err: text;
+                                  ok;
+                                });
+  deleteSkill: (id: text) -> (variant {
+                                err: text;
+                                ok;
+                              });
+  getAnalytics: () -> (Analytics) query;
+  getCallerUserRole: () -> (UserRole) query;
+  getCertifications: () -> (vec Certification) query;
+  getFeaturedProjects: () -> (vec Project) query;
+  getGithubRepos: (username: text) -> (variant {
+                                         err: text;
+                                         ok: text;
+                                       });
+  getGithubStats: (username: text) -> (variant {
+                                         err: text;
+                                         ok: text;
+                                       });
+  getMessages: () -> (vec Message) query;
+  getProjects: () -> (vec Project) query;
+  getResumeFileId: () -> (opt text) query;
+  getSkills: () -> (vec Skill) query;
+  isCallerAdmin: () -> (bool) query;
+  isOpenAIConfigured: () -> (bool) query;
+  markMessageRead: (id: text) -> (variant {
+                                    err: text;
+                                    ok;
+                                  });
+  openAITransform: (input: TransformationInput) ->
+   (TransformationOutput) query;
+  setOpenAIKey: (key: text) -> (variant {
+                                  err: text;
+                                  ok;
+                                });
+  setResumeFileId: (fileId: text) -> (variant {
+                                        err: text;
+                                        ok;
+                                      });
+  submitContactForm: (name: text, email: text, subject: text, message:
+   text) -> (variant {
+               err: text;
+               ok;
+             });
+  trackVisit: () -> ();
+  transform: (input: TransformationInput) -> (TransformationOutput) query;
+  updateCertification: (id: text, c: Certification) ->
+   (variant {
+      err: text;
+      ok;
+    });
+  updateProject: (id: text, p: Project) -> (variant {
+                                              err: text;
+                                              ok;
+                                            });
+  updateSkill: (id: text, s: Skill) -> (variant {
+                                          err: text;
+                                          ok;
+                                        });
+}
